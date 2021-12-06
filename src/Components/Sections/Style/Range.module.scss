@@ -1,0 +1,75 @@
+.range {
+  position: relative;
+  height: 1px;
+  background-color: #000;
+  border-radius: 75px;
+  user-select: none;
+
+  .container {
+    .min {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0%;
+
+      width: 20px;
+      height: 20px;
+
+      background-color: #fff;
+      border: 1px solid #000;
+      border-radius: 75px;
+      cursor: grab;
+      user-select: none;
+
+      &:active {
+        cursor: grabbing;
+      }
+
+      .showcase {
+        position: absolute;
+        top: -200%;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
+        padding: 0.25rem 1rem;
+
+        user-select: none;
+        pointer-events: none;
+      }
+    }
+
+    .max {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 100%;
+
+      width: 20px;
+      height: 20px;
+
+      background-color: #fff;
+      border: 1px solid #000;
+      border-radius: 75px;
+      cursor: grab;
+      user-select: none;
+
+      &:active {
+        cursor: grabbing;
+      }
+
+      .showcase {
+        position: absolute;
+        top: 150%;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
+        padding: 0.25rem 1rem;
+
+        user-select: none;
+        pointer-events: none;
+      }
+    }
+  }
+}

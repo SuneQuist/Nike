@@ -1,0 +1,126 @@
+.component_search_form {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 5;
+  padding: 2rem 20vw;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease-in;
+  padding-bottom: 3rem;
+  animation: start 0.35s ease-in forwards;
+
+  &__container {
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+
+    &_input {
+      width: 100%;
+      padding: 1rem 2rem;
+      border-radius: 75px;
+      background-color: #f7f7f7;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      text-transform: capitalize;
+
+      &:active,
+      &:hover {
+        background-color: #ececec;
+      }
+
+      &_container {
+        width: 100%;
+        margin-top: 0.5rem;
+
+        &__block {
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+
+          & > h2 {
+            font-size: 1rem;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 0.5rem;
+          }
+
+          & > a {
+            & > fieldset {
+              border: none;
+              outline: none;
+              padding: 0.75rem 0.75rem;
+              border-bottom: 1px solid #ececec;
+
+              & > p {
+                text-transform: capitalize;
+              }
+
+              &:hover,
+              &:active {
+                background-color: #ececec;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    order: -1;
+    padding-right: 0.5rem;
+  }
+}
+
+.overlay {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.8;
+}
+
+.component_search_button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease-in;
+  color: #000;
+  border: 2px solid #000;
+  padding: 0.35rem 1rem;
+  border-radius: 75px;
+  transition: 0.2s ease-in;
+
+  &:active,
+  &:hover {
+    background-color: #ececec;
+    transition: 0.2s ease-out;
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+@keyframes start {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

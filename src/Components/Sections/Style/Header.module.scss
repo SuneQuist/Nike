@@ -1,0 +1,291 @@
+$BorderBottomMargin: 1rem;
+
+.section__header {
+  width: 100%;
+  position: static;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  ul {
+    list-style-type: none;
+
+    & a {
+      text-decoration: none;
+      text-transform: capitalize;
+      color: #000;
+    }
+  }
+
+  &_container {
+    width: 100%;
+    position: relative;
+    background-color: #fafafa;
+    padding: $BorderBottomMargin;
+
+    &_list {
+      width: 100%;
+      padding: 0 5vw;
+      display: flex;
+      justify-content: space-between;
+
+      &_space {
+        width: 100%;
+        display: flex;
+        align-content: center;
+
+        img {
+          width: 4rem;
+        }
+      }
+
+      &_header {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        & > li {
+          position: relative;
+          padding: 0 1rem;
+
+          & > a {
+            display: flex;
+            justify-content: center;
+
+            &:hover::after,
+            &:active::after {
+              content: "";
+              width: 100%;
+              height: 2px;
+              background-color: #000;
+              position: absolute;
+              bottom: -$BorderBottomMargin + 0.05;
+              left: 0;
+              animation: transitionIn 0.25s ease-in forwards;
+            }
+          }
+        }
+      }
+
+      &_footer {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        justify-content: center;
+
+        & > .icon {
+          width: 1.3rem;
+          height: 1.3rem;
+          margin-left: 2rem;
+          position: relative;
+
+          & > div {
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            background-color: #ff0000;
+            padding: 0.5rem;
+            width: 2em;
+            height: 2em;
+            border-radius: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 12px;
+          }
+
+          &:hover::before,
+          &:active::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: #ececec;
+            border-radius: 75px;
+            z-index: -1;
+          }
+        }
+      }
+    }
+
+    &_block {
+      width: 100%;
+      background-color: #fff;
+      position: absolute;
+      top: 99%;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-start;
+      flex-flow: row wrap;
+      box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.05);
+      padding: 2rem 20vw;
+
+      &_catalog {
+        padding: 1rem 1.5rem;
+
+        &:last-child {
+          border: none;
+        }
+
+        & > li {
+          margin-bottom: 1rem;
+          & a {
+            font-weight: 500;
+          }
+        }
+      }
+
+      &_product {
+        & > li {
+          margin-top: 0.5rem;
+
+          & a {
+            font-size: 14px;
+            color: #00000070;
+            transition: 0.2s ease-out;
+
+            &:hover,
+            &:active {
+              color: #000000;
+              transition: 0.1s ease-in;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .section__header {
+    &_container {
+      &_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &_space {
+          order: -2;
+          display: flex;
+          justify-content: center;
+          margin: 1rem 0 2rem 0;
+        }
+
+        &_footer {
+          order: -1;
+          margin-bottom: 1.5rem;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .section__header {
+    &_container {
+      &_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &_space {
+          order: -2;
+          display: flex;
+          justify-content: center;
+          margin: 1rem 0;
+        }
+
+        &_header {
+          display: flex;
+          align-items: center;
+          padding-bottom: 1rem;
+
+          & > li {
+            padding: 0;
+            padding: 0.75rem 0;
+            margin-top: 1rem;
+            margin-left: 1.5rem;
+
+            & > a {
+              display: flex;
+              justify-content: center;
+
+              &:hover::after,
+              &:active::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: #000;
+                position: absolute;
+                bottom: 10%;
+                left: 0;
+                animation: transitionIn 0.25s ease-in forwards;
+              }
+            }
+          }
+        }
+
+        &_footer {
+          order: -1;
+          padding-top: 1rem;
+          margin-bottom: 1rem;
+          margin-bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          & > p {
+            display: flex;
+            align-items: center;
+          }
+
+          .icon {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            margin: 1rem 0;
+            margin-left: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.animate {
+  animation: animate 0.35s ease-in forwards;
+}
+
+@keyframes transitionIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 100%;
+  }
+}
+
+@keyframes animate {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
