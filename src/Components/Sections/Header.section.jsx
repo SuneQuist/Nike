@@ -10,23 +10,12 @@ import NikeLogo from "../../Assets/Nike_Logo.svg";
 export const Header = () => {
   const { database, basket } = useCart();
   const [current, setCurrent] = useState(null);
-  const [sticky, setSticky] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY <= 100) {
-        setSticky(false);
-      } else {
-        setSticky(true);
-      }
-    });
-  }, []);
 
   return (
     <section
       className={style.section__header}
       onMouseLeave={() => setCurrent(null)}
-      style={{ position: sticky ? "fixed" : "static" }}
+      style={{ position: "static" }}
       onClick={() => setCurrent(null)}
     >
       <header className={style.section__header_container}>

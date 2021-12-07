@@ -493,9 +493,9 @@ function Shop() {
           </React.Fragment>
         )}
       </section>
-      <article className={style.main__article}>
-        {data &&
-          data
+      {data && data.length > 0 ? (
+        <article className={style.main__article}>
+          {data
             ?.slice(
               page?.page * page?.itemsPerPage,
               page?.page === 0
@@ -547,38 +547,45 @@ function Shop() {
                 </div>
               </blockquote>
             ))}
-      </article>
-      <section className={style.main__pagination}>
-        {page &&
-          data &&
-          page?.lastPage &&
-          new Array(page?.lastPage).fill(null).map((v, idx) => (
-            <div
-              key={v + idx}
-              onClick={() => setPage({ ...page, page: idx })}
-              style={{
-                backgroundColor: page?.page === idx ? "#000" : "#fff",
-                color: page?.page !== idx ? "#000" : "#fff",
-                display:
-                  Number(page?.page) === Number(idx) ||
-                  Number(page?.page) + 1 === Number(idx) ||
-                  Number(page?.page) + 2 === Number(idx) ||
-                  Number(page?.lastPage) - 1 === Number(idx) ||
-                  Number(page?.page) - 1 === Number(idx) ||
-                  Number(page?.page) - 2 === Number(idx) ||
-                  Number(idx) === 0 ||
-                  Number(idx) === Number(page?.lastPage)
-                    ? "block"
-                    : "none",
-                marginLeft:
-                  Number(idx) === Number(page?.lastPage) - 1 ? "0.5rem" : null,
-                marginRight: Number(idx) === 0 ? "0.5rem" : null,
-              }}
-            >
-              {idx + 1}
-            </div>
-          ))}
-      </section>
+        </article>
+      ) : (
+        <h2 className={style.main__title}>No products found.</h2>
+      )}
+      {data && data.length > 0 && (
+        <section className={style.main__pagination}>
+          {page &&
+            data &&
+            page?.lastPage &&
+            new Array(page?.lastPage).fill(null).map((v, idx) => (
+              <div
+                key={v + idx}
+                onClick={() => setPage({ ...page, page: idx })}
+                style={{
+                  backgroundColor: page?.page === idx ? "#000" : "#fff",
+                  color: page?.page !== idx ? "#000" : "#fff",
+                  display:
+                    Number(page?.page) === Number(idx) ||
+                    Number(page?.page) + 1 === Number(idx) ||
+                    Number(page?.page) + 2 === Number(idx) ||
+                    Number(page?.lastPage) - 1 === Number(idx) ||
+                    Number(page?.page) - 1 === Number(idx) ||
+                    Number(page?.page) - 2 === Number(idx) ||
+                    Number(idx) === 0 ||
+                    Number(idx) === Number(page?.lastPage)
+                      ? "block"
+                      : "none",
+                  marginLeft:
+                    Number(idx) === Number(page?.lastPage) - 1
+                      ? "0.5rem"
+                      : null,
+                  marginRight: Number(idx) === 0 ? "0.5rem" : null,
+                }}
+              >
+                {idx + 1}
+              </div>
+            ))}
+        </section>
+      )}
     </main>
   );
 }

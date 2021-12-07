@@ -89,6 +89,12 @@
     }
   }
 
+  &__title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   &__article {
     width: 100%;
     display: grid;

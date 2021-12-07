@@ -39,7 +39,16 @@ function Home() {
                 key={product.sku + idx}
                 className={style.section_home__productsContainer_products_block}
               >
-                <Link to={"/" + product.name.toLowerCase().replace(/\s/g, "-")}>
+                <Link
+                  to={
+                    "/" +
+                    product.name.toLowerCase().replace(/\s/g, "-") +
+                    "/" +
+                    product.category_id +
+                    "/" +
+                    product.sku
+                  }
+                >
                   <img
                     src={
                       product?.images[
