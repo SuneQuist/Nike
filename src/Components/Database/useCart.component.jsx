@@ -77,7 +77,9 @@ export function CartProvider({ children }) {
   const deleteItem = useCallback(
     (product) => {
       if (product) {
-        const findOne = basket.filter((item) => item.id !== product[0].id);
+        const findOne = basket.filter(
+          (item) => item.id !== (product.id || product[0].id)
+        );
         console.log(findOne);
 
         localStorage.setItem("basket", JSON.stringify(findOne));

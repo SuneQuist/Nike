@@ -78,15 +78,15 @@ $BorderBottomMargin: 1rem;
         justify-content: center;
 
         & > .icon {
-          width: 1.3rem;
-          height: 1.3rem;
+          width: 1.5rem;
+          height: 1.5rem;
           margin-left: 2rem;
           position: relative;
 
           & > div {
             position: absolute;
-            bottom: -15px;
-            right: -15px;
+            bottom: -12px;
+            right: -12px;
             background-color: #ff0000;
             padding: 0.5rem;
             width: 2em;
