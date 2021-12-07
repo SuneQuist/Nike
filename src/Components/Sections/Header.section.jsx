@@ -21,7 +21,6 @@ export const Header = () => {
       }
     });
   }, []);
-  console.log(basket);
 
   return (
     <section

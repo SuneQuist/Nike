@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import { Header } from "../Components/Sections/Header.section";
+import { Footer } from "../Components/Sections/Footer.section";
 import style from "./LazyLoader.module.scss";
 
 import NikeLogo from "../Assets/Nike_Logo.svg";
@@ -18,6 +19,7 @@ export const LazyLoader = ({ children }) => {
       <>
         <Header></Header>
         {children}
+        <Footer></Footer>
       </>
     </Suspense>
   );
